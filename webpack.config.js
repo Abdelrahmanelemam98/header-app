@@ -27,41 +27,28 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      // For remotes (please adjust)
       name: "appHeader",
       filename: "remoteEntry.js",
       exposes: {
         "./HeaderComponent": "./src/app/header/header.component.ts",
       },
 
-      // For hosts (please adjust)
-      // remotes: {
-      //     "mfe1": "http://localhost:3000/remoteEntry.js",
-
-      // },
-
       shared: share({
         "@angular/core": {
           singleton: true,
           strictVersion: false,
-          requiredVersion: "auto",
+          requiredVersion: "18",
         },
         "@angular/common": {
           singleton: true,
           strictVersion: false,
-          requiredVersion: "auto",
-        },
-        "@angular/common/http": {
-          singleton: true,
-          strictVersion: false,
-          requiredVersion: "auto",
+          requiredVersion: "18",
         },
         "@angular/router": {
           singleton: true,
           strictVersion: false,
-          requiredVersion: "auto",
+          requiredVersion: "18",
         },
-
         ...sharedMappings.getDescriptors(),
       }),
     }),
