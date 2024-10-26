@@ -30,24 +30,25 @@ module.exports = {
       name: "appHeader",
       filename: "remoteEntry.js",
       exposes: {
-        "./HeaderComponent": "./src/app/header/header.component.ts",
+        "./CardComponent": "./src/app/card/card.component.ts",
+        // "CardComponent":"./src/app/card/card.component.ts"
       },
 
       shared: share({
         "@angular/core": {
           singleton: true,
           strictVersion: false,
-          requiredVersion: "18",
+          requiredVersion: "auto",
         },
         "@angular/common": {
           singleton: true,
           strictVersion: false,
-          requiredVersion: "18",
+          requiredVersion: "auto",
         },
         "@angular/router": {
           singleton: true,
           strictVersion: false,
-          requiredVersion: "18",
+          requiredVersion: "auto",
         },
         ...sharedMappings.getDescriptors(),
       }),
