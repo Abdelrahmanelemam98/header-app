@@ -23,7 +23,7 @@ module.exports = {
     },
   },
   experiments: {
-    outputModule: true,
+    // outputModule: true,
   },
   plugins: [
     new ModuleFederationPlugin({
@@ -31,7 +31,8 @@ module.exports = {
       filename: "remoteEntry.js",
       exposes: {
         "./CardComponent": "./src/app/card/card.component.ts",
-        // "CardComponent":"./src/app/card/card.component.ts"
+        "./CategorListComponent":
+          "./src/app/categor-list/categor-list.component.ts",
       },
 
       shared: share({
